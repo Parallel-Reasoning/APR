@@ -33,6 +33,20 @@ APR efficiently distributes compute, reduces latency, overcomes context window l
 
 > The full code will be released soon!
 ## Data Preparation
+We provide pre-generated data on huggingface, which includes [countdown problems](https://huggingface.co/datasets/Parallel-Reasoning/countdown_problems) for training and validation, [APR SFT data](https://huggingface.co/datasets/Parallel-Reasoning/apr_sft_data), and [SoS+ SFT data](https://huggingface.co/datasets/Parallel-Reasoning/sosp_sft_data).
+
+### Generate Data
+If you want to generate the data yourself, you can run the following commands:
+```bash
+bash src/data/scripts/create_prob.sh
+```
+This will generate the countdown problems for training and validation.
+```bash
+bash src/data/scripts/create_search.sh
+```
+This will generate the APR and SoS+ search paths for training.
+> [!Note]
+> There are still some filtering and pre-processing steps to be done for the raw generated data for each SFT setting. We will update this part soon.
 
 ## Supervised Training
 We use TPU-v3-128 for supervised training with a codebase building upon [JAX_llama](https://github.com/Sea-Snell/JAX_llama). 

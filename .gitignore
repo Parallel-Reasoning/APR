@@ -1,6 +1,10 @@
 wandb/
 outputs/
-data/
+/data
+
+# uv lock files
+uv.lock
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
