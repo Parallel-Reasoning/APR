@@ -1,0 +1,45 @@
+[project]
+name = "apr"
+version = "0.1.0"
+description = "APR (Adaptive Parallel Reasoning)"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "transformers",
+    "tqdm",
+    "datasets",
+    "huggingface-hub",
+    "litellm",
+    "termcolor",
+    "sglang[all]>=0.5.0rc2",
+    "torch",
+    "hydra-core",
+    "wandb",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.setuptools.package-dir]
+"" = "."
+
+[tool.uv.workspace]
+members = [
+    ".",
+]
+
+[tool.uv.sources]
+apr = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "apr",
+]
