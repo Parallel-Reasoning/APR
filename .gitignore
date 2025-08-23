@@ -2,8 +2,8 @@ wandb/
 outputs/
 /data
 
-# uv lock files
-uv.lock
+# Claude settings
+.claude/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
